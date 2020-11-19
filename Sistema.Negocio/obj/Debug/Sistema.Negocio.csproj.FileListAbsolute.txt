@@ -1,0 +1,11 @@
+C:\Users\dany_\source\repos\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.csproj.CoreCompileInputs.cache
+C:\Users\dany_\source\repos\Sistema\Sistema.Negocio\bin\Debug\Sistema.Negocio.dll
+C:\Users\dany_\source\repos\Sistema\Sistema.Negocio\bin\Debug\Sistema.Negocio.pdb
+C:\Users\dany_\source\repos\Sistema\Sistema.Negocio\bin\Debug\Sistema.Datos.dll
+C:\Users\dany_\source\repos\Sistema\Sistema.Negocio\bin\Debug\Sistema.Entidades.dll
+C:\Users\dany_\source\repos\Sistema\Sistema.Negocio\bin\Debug\Sistema.Datos.pdb
+C:\Users\dany_\source\repos\Sistema\Sistema.Negocio\bin\Debug\Sistema.Entidades.pdb
+C:\Users\dany_\source\repos\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.csprojAssemblyReference.cache
+C:\Users\dany_\source\repos\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.csproj.CopyComplete
+C:\Users\dany_\source\repos\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.dll
+C:\Users\dany_\source\repos\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.pdb

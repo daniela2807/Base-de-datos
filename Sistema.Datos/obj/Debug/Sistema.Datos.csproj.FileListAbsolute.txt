@@ -1,0 +1,9 @@
+C:\Users\dany_\source\repos\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.CoreCompileInputs.cache
+C:\Users\dany_\source\repos\Sistema\Sistema.Datos\bin\Debug\Sistema.Datos.dll
+C:\Users\dany_\source\repos\Sistema\Sistema.Datos\bin\Debug\Sistema.Datos.pdb
+C:\Users\dany_\source\repos\Sistema\Sistema.Datos\bin\Debug\Sistema.Entidades.dll
+C:\Users\dany_\source\repos\Sistema\Sistema.Datos\bin\Debug\Sistema.Entidades.pdb
+C:\Users\dany_\source\repos\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.csprojAssemblyReference.cache
+C:\Users\dany_\source\repos\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.CopyComplete
+C:\Users\dany_\source\repos\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.dll
+C:\Users\dany_\source\repos\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.pdb

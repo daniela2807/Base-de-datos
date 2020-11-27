@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Data.SqlClient;
+using MySql.Data;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace Sistema.Datos
 {
@@ -13,33 +14,24 @@ namespace Sistema.Datos
         private string Servidor;
         private string Usuario;
         private string Clave;
-        private bool seguridad;
 
         private static Conexion Con = null;
 
         private Conexion()
         {
-            this.Base = "bd_biblioteca2";
-            this.Servidor = "127.0.0.1";
+            this.Base = "art_vinil";
+            this.Servidor = "localhost";
             this.Usuario = "root";
-            this.Clave = "";
-            this.seguridad = true;
+            this.Clave = "dany";
         }
 
-        public SqlConnection CrearConexion()
+        public MySqlConnection CrearConexion()
         {
-            SqlConnection Cadena = new SqlConnection();
+            MySqlConnection Cadena = new MySqlConnection();
             try
             {
-                Cadena.ConnectionString = "Server=" + this.Servidor + "; Database=" + this.Base + ";";
-                if(this.seguridad == true)
-                {
-                    Cadena.ConnectionString = Cadena.ConnectionString + "Integrated Security = SSPI";
-                }
-                else
-                {
-                    Cadena.ConnectionString = Cadena.ConnectionString + "User Id="+this.Usuario+";Password="+this.Clave;
-                }
+                Cadena.ConnectionString = "Server=" + this.Servidor + "; Database=" + this.Base + "; Uid=" +this.Usuario +"; Pwd="+this.Clave;
+               
             }
             catch(Exception ex)
             {

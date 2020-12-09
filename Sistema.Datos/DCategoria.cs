@@ -36,6 +36,31 @@ namespace Sistema.Datos
             }
         }
 
+        public DataTable Seleccionar()
+        {
+            MySqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            MySqlConnection Con = new MySqlConnection();
+            try
+            {
+                Con = Conexion.getInstancia().CrearConexion();
+                MySqlCommand Comando = new MySqlCommand("categoria_seleccionar", Con);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Con.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (Con.State == ConnectionState.Open) Con.Close();
+            }
+        }
+
         public string Existe(string Valor)
         {
             string Rpta = "";

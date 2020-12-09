@@ -43,3 +43,7 @@ C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Prese
 C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.csproj.GenerateResource.cache
 C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmCategoria.resources
 C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.Properties.Resources.resources
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmArticulo.resources
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\bin\Debug\BarcodeStandard.dll
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\bin\Debug\System.Drawing.Common.dll
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmRol.resources

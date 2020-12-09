@@ -17,10 +17,18 @@ namespace Sistema.Negocio
             return Datos.Listar();
         }
 
+
+
         public static DataTable Buscar(string Valor)
         {
             DCategoria Datos = new DCategoria();
             return Datos.Buscar(Valor);
+        }
+
+        public static DataTable Seleccionar()
+        {
+            DCategoria Datos = new DCategoria();
+            return Datos.Seleccionar();
         }
 
         public static string Insertar(string Nombre, string Descripcion)

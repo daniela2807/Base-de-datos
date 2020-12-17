@@ -13,7 +13,7 @@ namespace Sistema.Presentacion
         [STAThread]
         static void Main(string[] args)
         {
-            Application.Run(new FrmPrincipal());
+            Application.Run(new FrmLogin());
         }
     }
 }

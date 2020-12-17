@@ -47,3 +47,11 @@ C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Prese
 C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\bin\Debug\BarcodeStandard.dll
 C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\bin\Debug\System.Drawing.Common.dll
 C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmRol.resources
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmUsuario.resources
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmLogin.resources
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmProveedor.resources
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmCliente.resources
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmIngreso.resources
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.Vista_ProveedorIngreso.resources
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmVenta.resources
+C:\Users\dany_\source\repos\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.VIsta_ClienteVenta.resources

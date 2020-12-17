@@ -271,7 +271,7 @@ namespace Sistema.Presentacion
                 }
                 else
                 {
-                    Rpta = NArticulo.Actualizar(Convert.ToInt16(TxtId.Text), Convert.ToInt16(CboCategoria.SelectedValue), TxtCodigo.Text.Trim(), TxtNombre.Text.Trim(), Convert.ToDecimal(TxtPrecioVenta.Text), Convert.ToInt16(TxtStock.Text), TxtDescripcion.Text.Trim(), TxtImagen.Text.Trim());
+                    Rpta = NArticulo.Actualizar(Convert.ToInt16(TxtId.Text), Convert.ToInt16(CboCategoria.SelectedValue), TxtCodigo.Text.Trim(), TxtNombre.Text.Trim(),this.NombreAnt, Convert.ToDecimal(TxtPrecioVenta.Text), Convert.ToInt16(TxtStock.Text), TxtDescripcion.Text.Trim(), TxtImagen.Text.Trim());
                  
                     if (Rpta.Equals("OK"))
                     {

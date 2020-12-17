@@ -13,6 +13,12 @@ namespace Sistema.Presentacion
     public partial class FrmPrincipal : Form
     {
         private int childFormNumber = 0;
+        public int idusuario;
+        public int idrol;
+        public string nombre;
+        public string rol;
+        public bool estado;
+            
 
         public FrmPrincipal()
         {
@@ -106,7 +112,29 @@ namespace Sistema.Presentacion
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            StBarraInferior.Text = "Desarrollado por Daniela Gutierrez y Luis Diego de Santos, Usuario " + this.nombre;
+            MessageBox.Show("Bienvenido al Sistema: "+this.nombre, "Aer-Vinil", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            if (this.rol.Equals("Administrador"))
+            {
+                MnuAlmacen.Enabled = true;
+                MnuConsultas.Enabled = true;
+                MnuIngresos.Enabled = true;
+                MnuVentas.Enabled = true;
+                MnuAccesos.Enabled = true;
+                TsCompras.Enabled = true;
+                TsVentas.Enabled = true;
+            }
+            else
+            {
+                MnuAlmacen.Enabled = true;
+                MnuConsultas.Enabled = true;
+                MnuIngresos.Enabled = true;
+                MnuVentas.Enabled = true;
+                MnuAccesos.Enabled = false;
+                TsCompras.Enabled = true;
+                TsVentas.Enabled = true;
+            }
         }
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,6 +164,56 @@ namespace Sistema.Presentacion
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmRol frm = new FrmRol();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frm = new FrmUsuario();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult option;
+            option = MessageBox.Show("¿Deseas salir del sistema?", "Sistema Ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if(option == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProveedor frm = new FrmProveedor();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCliente frm = new FrmCliente();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmIngreso frm = new FrmIngreso();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmVenta frm = new FrmVenta();
             frm.MdiParent = this;
             frm.Show();
         }

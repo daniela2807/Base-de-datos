@@ -23,6 +23,25 @@ namespace Sistema.Negocio
             return Datos.Buscar(Valor);
         }
 
+        public static DataTable BuscarCodigo(string Valor)
+        {
+            DArticulos Datos = new DArticulos();
+            return Datos.BuscarCodigo(Valor);
+        }
+
+        public static DataTable BuscarCodigoVenta(string Valor)
+        {
+            DArticulos Datos = new DArticulos();
+            return Datos.BuscarCodigoVenta(Valor);
+        }
+
+        public static DataTable BuscarVenta(string Valor)
+        {
+            DArticulos Datos = new DArticulos();
+            return Datos.BuscarVenta(Valor);
+        }
+
+
         public static string Insertar(int idcategoria, string Codigo, string Nombre, decimal PrecioVenta, int Stock, string Descripcion, string Imagen)
         {
             DArticulos Datos = new DArticulos();
@@ -46,16 +65,12 @@ namespace Sistema.Negocio
             }
         }
 
-        public static string Actualizar(int idarticulo, int idcategoria, string Codigo, string Nombre, decimal PrecioVenta, int Stock, string Descripcion, string Imagen)
+        public static string Actualizar(int idarticulo, int idcategoria, string Codigo, string Nombre, string nombreAnt, decimal PrecioVenta, int Stock, string Descripcion, string Imagen)
         {
             DArticulos Datos = new DArticulos();
 
             string Existe = Datos.Existe(Nombre);
-            if (Existe.Equals(1))
-            {
-                return "La articulo ya existe";
-            }
-            else
+            if (Nombre.Equals(nombreAnt))
             {
                 Articulo Obj = new Articulo();
                 Obj.IdArticulo = idarticulo;
@@ -67,6 +82,26 @@ namespace Sistema.Negocio
                 Obj.Stock = Stock;
                 Obj.Imagen = Imagen;
                 return Datos.Actualizar(Obj);
+            }
+            else
+            {
+                if (Existe.Equals(1))
+                {
+                    return "La articulo ya existe";
+                }
+                else
+                {
+                    Articulo Obj = new Articulo();
+                    Obj.IdArticulo = idarticulo;
+                    Obj.IdCategoria = idcategoria;
+                    Obj.Codigo = Codigo;
+                    Obj.Nombre = Nombre;
+                    Obj.PrecioVenta = PrecioVenta;
+                    Obj.Descripcion = Descripcion;
+                    Obj.Stock = Stock;
+                    Obj.Imagen = Imagen;
+                    return Datos.Actualizar(Obj);
+                }
             }
         }
 

@@ -13,6 +13,7 @@ namespace Sistema.Presentacion
 {
     public partial class FrmCategoria : Form
     {
+        public string nombreAnt;
         public FrmCategoria()
         {
             InitializeComponent();
@@ -110,7 +111,7 @@ namespace Sistema.Presentacion
             try
             {
                 string Rpta = "";
-                if(TxtNombre.Text == String.Empty)
+                if(TxtNombre.Text == string.Empty)
                 {
                     this.MensajeError("Falta ingresar algunos datos, seran remarcados");
                     ErrorIcono.SetError(TxtNombre, "Ingrese un nombre");
@@ -152,6 +153,7 @@ namespace Sistema.Presentacion
                 btnInsertar.Visible = false;
                 TxtId.Text = Convert.ToString(DgbListado.CurrentRow.Cells["ID"].Value);
                 TxtNombre.Text = Convert.ToString(DgbListado.CurrentRow.Cells["Nombre"].Value);
+                this.nombreAnt = Convert.ToString(DgbListado.CurrentRow.Cells["Nombre"].Value);
                 TxtDescripcion.Text = Convert.ToString(DgbListado.CurrentRow.Cells["Descripcion"].Value);
                 tabControl1.SelectedIndex = 1;
             }catch(Exception)
@@ -172,7 +174,7 @@ namespace Sistema.Presentacion
                 }
                 else
                 {
-                    Rpta = NCategoria.Actualizar(Convert.ToInt16(TxtId.Text), TxtNombre.Text.Trim(), TxtDescripcion.Text.Trim());
+                    Rpta = NCategoria.Actualizar(Convert.ToInt16(TxtId.Text), TxtNombre.Text.Trim(),this.nombreAnt, TxtDescripcion.Text.Trim());
                     if (Rpta.Equals("OK"))
                     {
                         this.MensajeoOk("Se actualizo de forma correcta el registro");

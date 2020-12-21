@@ -47,7 +47,6 @@
             this.BtnGenerar = new System.Windows.Forms.Button();
             this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.PicImagen = new System.Windows.Forms.PictureBox();
             this.BtnCargarImagen = new System.Windows.Forms.Button();
             this.TxtImagen = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,12 +65,14 @@
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.LblTotal = new System.Windows.Forms.Label();
             this.DgbListado = new System.Windows.Forms.DataGridView();
+            this.PicImagen = new System.Windows.Forms.PictureBox();
+            this.BtnReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorIcono)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicImagen)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgbListado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // ErrorIcono
@@ -144,7 +145,6 @@
             this.tabPage2.Controls.Add(this.BtnGenerar);
             this.tabPage2.Controls.Add(this.TxtCodigo);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.PicImagen);
             this.tabPage2.Controls.Add(this.BtnCargarImagen);
             this.tabPage2.Controls.Add(this.TxtImagen);
             this.tabPage2.Controls.Add(this.label5);
@@ -158,6 +158,7 @@
             this.tabPage2.Controls.Add(this.TxtNombre);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.PicImagen);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -253,15 +254,6 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Codigo de barras";
             // 
-            // PicImagen
-            // 
-            this.PicImagen.Location = new System.Drawing.Point(642, 65);
-            this.PicImagen.Name = "PicImagen";
-            this.PicImagen.Size = new System.Drawing.Size(316, 251);
-            this.PicImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PicImagen.TabIndex = 14;
-            this.PicImagen.TabStop = false;
-            // 
             // BtnCargarImagen
             // 
             this.BtnCargarImagen.Location = new System.Drawing.Point(883, 27);
@@ -341,6 +333,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.BtnReporte);
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.btnDesactivar);
             this.tabPage1.Controls.Add(this.btnActivar);
@@ -441,6 +434,25 @@
             this.DgbListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgbListado_CellContentClick);
             this.DgbListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgbListado_CellDoubleClick);
             // 
+            // PicImagen
+            // 
+            this.PicImagen.Location = new System.Drawing.Point(642, 65);
+            this.PicImagen.Name = "PicImagen";
+            this.PicImagen.Size = new System.Drawing.Size(316, 251);
+            this.PicImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PicImagen.TabIndex = 14;
+            this.PicImagen.TabStop = false;
+            // 
+            // BtnReporte
+            // 
+            this.BtnReporte.Location = new System.Drawing.Point(491, 17);
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.Size = new System.Drawing.Size(90, 23);
+            this.BtnReporte.TabIndex = 8;
+            this.BtnReporte.Text = "Reporte";
+            this.BtnReporte.UseVisualStyleBackColor = true;
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
+            // 
             // FrmArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,11 +466,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ErrorIcono)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicImagen)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgbListado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicImagen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -502,5 +514,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button BtnInsertar;
+        private System.Windows.Forms.Button BtnReporte;
     }
 }

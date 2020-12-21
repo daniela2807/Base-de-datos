@@ -37,6 +37,8 @@
             this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.BtnSalir = new System.Windows.Forms.TabPage();
+            this.BtnEntregado = new System.Windows.Forms.Button();
+            this.BtnTerminar = new System.Windows.Forms.Button();
             this.PanelDetalleIngreso = new System.Windows.Forms.Panel();
             this.TxtTotalD = new System.Windows.Forms.TextBox();
             this.TxtSubTotalD = new System.Windows.Forms.TextBox();
@@ -91,6 +93,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnComprobante = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorIcono)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.BtnSalir.SuspendLayout();
@@ -163,6 +166,9 @@
             // 
             // BtnSalir
             // 
+            this.BtnSalir.Controls.Add(this.btnComprobante);
+            this.BtnSalir.Controls.Add(this.BtnEntregado);
+            this.BtnSalir.Controls.Add(this.BtnTerminar);
             this.BtnSalir.Controls.Add(this.PanelDetalleIngreso);
             this.BtnSalir.Controls.Add(this.btnAnular);
             this.BtnSalir.Controls.Add(this.ChkSeleccionar);
@@ -178,6 +184,26 @@
             this.BtnSalir.Text = "Listado";
             this.BtnSalir.UseVisualStyleBackColor = true;
             // 
+            // BtnEntregado
+            // 
+            this.BtnEntregado.Location = new System.Drawing.Point(418, 372);
+            this.BtnEntregado.Name = "BtnEntregado";
+            this.BtnEntregado.Size = new System.Drawing.Size(75, 23);
+            this.BtnEntregado.TabIndex = 9;
+            this.BtnEntregado.Text = "Entregado";
+            this.BtnEntregado.UseVisualStyleBackColor = true;
+            this.BtnEntregado.Click += new System.EventHandler(this.BtnEntregado_Click);
+            // 
+            // BtnTerminar
+            // 
+            this.BtnTerminar.Location = new System.Drawing.Point(319, 372);
+            this.BtnTerminar.Name = "BtnTerminar";
+            this.BtnTerminar.Size = new System.Drawing.Size(75, 23);
+            this.BtnTerminar.TabIndex = 8;
+            this.BtnTerminar.Text = "Terminado";
+            this.BtnTerminar.UseVisualStyleBackColor = true;
+            this.BtnTerminar.Click += new System.EventHandler(this.BtnTerminar_Click);
+            // 
             // PanelDetalleIngreso
             // 
             this.PanelDetalleIngreso.BackColor = System.Drawing.Color.LawnGreen;
@@ -189,7 +215,7 @@
             this.PanelDetalleIngreso.Controls.Add(this.label12);
             this.PanelDetalleIngreso.Controls.Add(this.BtnCerrarDetalle);
             this.PanelDetalleIngreso.Controls.Add(this.DgbMostrarDetalle);
-            this.PanelDetalleIngreso.Location = new System.Drawing.Point(187, 70);
+            this.PanelDetalleIngreso.Location = new System.Drawing.Point(187, 54);
             this.PanelDetalleIngreso.Name = "PanelDetalleIngreso";
             this.PanelDetalleIngreso.Size = new System.Drawing.Size(811, 319);
             this.PanelDetalleIngreso.TabIndex = 7;
@@ -724,6 +750,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnComprobante
+            // 
+            this.btnComprobante.Location = new System.Drawing.Point(490, 17);
+            this.btnComprobante.Name = "btnComprobante";
+            this.btnComprobante.Size = new System.Drawing.Size(97, 23);
+            this.btnComprobante.TabIndex = 10;
+            this.btnComprobante.Text = "Comprobante";
+            this.btnComprobante.UseVisualStyleBackColor = true;
+            this.btnComprobante.Click += new System.EventHandler(this.btnComprobante_Click_1);
+            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -820,5 +856,8 @@
         private System.Windows.Forms.TextBox TxtAnticipo;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button BtnEntregado;
+        private System.Windows.Forms.Button BtnTerminar;
+        private System.Windows.Forms.Button btnComprobante;
     }
 }

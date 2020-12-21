@@ -147,6 +147,8 @@ namespace Sistema.Presentacion
 
             DgbListado.Columns[0].Visible = false;
             btnAnular.Visible = false;
+            BtnEntregado.Visible = false;
+            BtnTerminar.Visible = false;
             ChkSeleccionar.Checked = false;
         }
 
@@ -327,7 +329,6 @@ namespace Sistema.Presentacion
                     Rpta = NVenta.Insertar(Convert.ToInt16(TxtIdCliente.Text), Variables.IdUsuario, CboComprobante.Text, TxtSerieComprobante.Text, TxtNumeroComprobante.Text, DtFechaEntrega.Value, Convert.ToDecimal(TxtImpuesto.Text), Convert.ToDecimal(TxtTotal.Text), Convert.ToDecimal(TxtAnticipo.Text));
                     foreach (DataRow FilaTemp in DtDetalle.Rows)
                     {
-                        MensajeoOk(Rpta);
                         Segunda = NVenta.InsertarDetalleVenta(Convert.ToInt16(Rpta), Convert.ToInt16(FilaTemp["idarticulo"]), Convert.ToInt16(FilaTemp["cantidad"]), Convert.ToDouble(FilaTemp["precio"]), Convert.ToDouble(FilaTemp["descuento"]));
                     }
                     if (Segunda.Equals("OK"))
@@ -407,11 +408,15 @@ namespace Sistema.Presentacion
             {
                 DgbListado.Columns[0].Visible = true;
                 btnAnular.Visible = true;
+                BtnEntregado.Visible = true;
+                BtnTerminar.Visible = true;
             }
             else
             {
                 DgbListado.Columns[0].Visible = false;
                 btnAnular.Visible = false;
+                BtnEntregado.Visible = false;
+                BtnTerminar.Visible = false;
             }
         }
 
@@ -431,10 +436,11 @@ namespace Sistema.Presentacion
                         {
                             Codigo = Convert.ToInt16(row.Cells[1].Value);
                             Rpta = NVenta.Anular(Codigo);
+                            Rpta = NVenta.ActualizarStockAnular(Codigo);
 
                             if (Rpta.Equals("OK"))
                             {
-                                this.MensajeoOk("Se activo el registo " + Convert.ToString(row.Cells[6].Value) + "-" + Convert.ToString(row.Cells[7].Value));
+                                this.MensajeoOk("Se anulo el registo " + Convert.ToString(row.Cells[6].Value) + "-" + Convert.ToString(row.Cells[7].Value));
                             }
                             else
                             {
@@ -450,6 +456,89 @@ namespace Sistema.Presentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void BtnTerminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                    int Codigo;
+                    string Rpta = "";
+                    foreach (DataGridViewRow row in DgbListado.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            Codigo = Convert.ToInt16(row.Cells[1].Value);
+                            Rpta = NVenta.Terminar(Codigo);
+
+                            if (Rpta.Equals("OK"))
+                            {
+                                this.MensajeoOk("Se configuro el registo " + Convert.ToString(row.Cells[6].Value) + "-" + Convert.ToString(row.Cells[7].Value));
+                            }
+                            else
+                            {
+                                this.MensajeError(Rpta);
+                            }
+                        }
+                    }
+                    this.Listar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void BtnEntregado_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int Codigo;
+                string Rpta = "";
+                foreach (DataGridViewRow row in DgbListado.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells[0].Value))
+                    {
+                        Codigo = Convert.ToInt16(row.Cells[1].Value);
+                        Rpta = NVenta.Entregar(Codigo);
+
+                        if (Rpta.Equals("OK"))
+                        {
+                            this.MensajeoOk("Se configuro el registo " + Convert.ToString(row.Cells[6].Value) + "-" + Convert.ToString(row.Cells[7].Value));
+                        }
+                        else
+                        {
+                            this.MensajeError(Rpta);
+                        }
+                    }
+                }
+                this.Listar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void BtnComprobante_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnComprobante_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Variables.IdVenta = Convert.ToInt16(DgbListado.CurrentRow.Cells["ID"].Value);
+                Reportes.FrmComprobanteVenta Comprobante = new Reportes.FrmComprobanteVenta();
+                Comprobante.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

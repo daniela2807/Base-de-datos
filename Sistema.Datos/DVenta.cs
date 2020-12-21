@@ -135,7 +135,7 @@ namespace Sistema.Datos
                 Comando.Parameters.Add("fecha_entrega2", MySqlDbType.Date).Value = Obj.FechaEntrega;
                 Comando.Parameters.Add("impuesto2", MySqlDbType.Decimal).Value = Obj.Impuesto;
                 Comando.Parameters.Add("total2", MySqlDbType.Decimal).Value = Obj.Total;
-                Comando.Parameters.Add("anticipo2", MySqlDbType.Decimal).Value = Obj.Impuesto;
+                Comando.Parameters.Add("anticipo2", MySqlDbType.Decimal).Value = Obj.Anticipo;
                 MySqlParameter Indice = new MySqlParameter();
                 Indice.ParameterName = "indice";
                 Indice.MySqlDbType = MySqlDbType.Int16;
@@ -164,6 +164,82 @@ namespace Sistema.Datos
             {
                 SqlCon = Conexion.getInstancia().CrearConexion();
                 MySqlCommand Comando = new MySqlCommand("venta_anular", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("valor2", MySqlDbType.Int16).Value = Id;
+                SqlCon.Open();
+                Comando.ExecuteNonQuery();
+                Rpta = "OK";
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
+
+
+        public string ActualizarStockAnular(int Id)
+        {
+            string Rpta = "";
+            MySqlConnection SqlCon = new MySqlConnection();
+            try
+            {
+                SqlCon = Conexion.getInstancia().CrearConexion();
+                MySqlCommand Comando = new MySqlCommand("Update2_ActualizarStock", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("idventa2", MySqlDbType.Int16).Value = Id;
+                SqlCon.Open();
+                Comando.ExecuteNonQuery();
+                Rpta = "OK";
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
+
+        public string Terminar(int Id)
+        {
+            string Rpta = "";
+            MySqlConnection SqlCon = new MySqlConnection();
+            try
+            {
+                SqlCon = Conexion.getInstancia().CrearConexion();
+                MySqlCommand Comando = new MySqlCommand("venta_terminado", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("valor2", MySqlDbType.Int16).Value = Id;
+                SqlCon.Open();
+                Comando.ExecuteNonQuery();
+                Rpta = "OK";
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
+
+        public string Entregar(int Id)
+        {
+            string Rpta = "";
+            MySqlConnection SqlCon = new MySqlConnection();
+            try
+            {
+                SqlCon = Conexion.getInstancia().CrearConexion();
+                MySqlCommand Comando = new MySqlCommand("venta_entregado", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("valor2", MySqlDbType.Int16).Value = Id;
                 SqlCon.Open();

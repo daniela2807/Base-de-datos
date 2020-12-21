@@ -128,7 +128,7 @@ namespace Sistema.Presentacion
             else
             {
                 MnuAlmacen.Enabled = true;
-                MnuConsultas.Enabled = true;
+                MnuConsultas.Enabled = false;
                 MnuIngresos.Enabled = true;
                 MnuVentas.Enabled = true;
                 MnuAccesos.Enabled = false;
@@ -216,6 +216,18 @@ namespace Sistema.Presentacion
             FrmVenta frm = new FrmVenta();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void consultaVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmVentasEmpleados Ventas = new Reportes.FrmVentasEmpleados();
+            Ventas.ShowDialog();
+        }
+
+        private void consultaComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ComprasvsVentas Vs = new Reportes.ComprasvsVentas();
+            Vs.ShowDialog();
         }
     }
 }

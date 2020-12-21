@@ -63,5 +63,23 @@ namespace Sistema.Negocio
             DVenta Datos = new DVenta();
             return Datos.Anular(Id);
         }
+
+        public static string ActualizarStockAnular(int Id)
+        {
+            DVenta Datos = new DVenta();
+            return Datos.ActualizarStockAnular(Id);
+        }
+
+        public static string Terminar(int Id)
+        {
+            DVenta Datos = new DVenta();
+            return Datos.Terminar(Id);
+        }
+
+        public static string Entregar(int Id)
+        {
+            DVenta Datos = new DVenta();
+            return Datos.Entregar(Id);
+        }
     }
 }
